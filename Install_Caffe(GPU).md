@@ -1,7 +1,7 @@
 ### 电脑环境和软件版本
 
     | software/hardware |  Configuration  |
-    | :---------------: |:---------------:| 
+    | ----------------- |-----------------| 
     | GPU               | GTX1080         |
     | Linux             | 16.04(LTS)64    | 
     | python            | Anaconda2       | 
