@@ -9,7 +9,6 @@
   May be you can change your learning rate.
 
 * **See the version of Tensorflow**
-
 ```
 $ python
 import tensorflow as tf
