@@ -383,6 +383,11 @@ $ sudo cp /home/zhong/Downloads/opencv-2.4.9/build/lib/cv2.so /usr/local/lib/pyt
 $ sudo ln -s /usr/local/lib/python2.7/site-packages/cv2.so /home/zhong/anaconda2/lib/python2.7/site-packages/
 ```
 
+> 注：以上是opencv源码安装，其实也可以在acaconda下直接安装opencv
+```
+$ conda install --channel https://conda.anaconda.org/menpo opencv3
+```
+
 ## 八、安装MATLAB（我的版本MATLAB2014A）
 
 > 安装时需要断网
