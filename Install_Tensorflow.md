@@ -1,6 +1,6 @@
 ## **用Anaconda方法安装tensorflow**
 
-> 注：不开辟另外的计算空间也能直接安装
+> 注：不开辟另外的计算空间也能直接安装，直接进行3.1步骤即可实现
 
 #### 1. 建立一个conda计算环境
 `$ conda create -n tensorflow python=2.7`
