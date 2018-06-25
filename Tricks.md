@@ -14,3 +14,13 @@ $ python
 import tensorflow as tf
 tf.__version__
 ```
+
+* **python判断后缀是否为图片**
+```
+fileName1='pic.jpg'
+if fileName1.endswith(('.gif', '.jpg', '.png')):
+    print '这是一张图片'
+else:
+    print '这不是一张图片'
+```
+
