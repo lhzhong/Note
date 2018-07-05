@@ -29,6 +29,9 @@ ssh分客户端和服务器端，ssh-client服务ubuntu下默认安装，ssh-ser
 **3.登陆ssh**
 
 > ssh usename@x.x.x.x
+x.x.x.x可通过服务器端输入```ifconfig```命令查看
+
+以上就可直接用密码登陆，另外还有一种用密钥方式登录
 
 **4.密钥登陆**
 
@@ -93,3 +96,13 @@ PasswordAuthentication no
 * 在ubuntuan使用密钥登陆
 
 把id_rsa私钥文件放到客户端的```/home/user/.ssh/```下
+
+**5.文件传输**
+
+* 下载数据
+
+> scp  -i  ~/.ssh/id_rsa  -r username@remote_ip:/data/www/develop/develop_activity_task  /data/www/activity_task_bak
+
+* 上传数据
+
+> scp -i ~/.ssh/id_rsa  -r /data/www/poker/pokerServer root@remote_ip:/data/www/
