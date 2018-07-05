@@ -106,3 +106,9 @@ PasswordAuthentication no
 * 上传数据
 
 > scp -i ~/.ssh/id_rsa  -r /data/www/poker/pokerServer root@remote_ip:/data/www/
+
+**6.windows下连接**
+
+可下载putty软件，具体操作见链接
+
+http://blog.51cto.com/callmepeanut/1336358
