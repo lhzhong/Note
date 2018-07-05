@@ -31,3 +31,12 @@
 #### 5.从conda环境中退出
 (tensorflow)$ source deactivate
 
+#### 6.windows下安装tensorflow
+
+cpu:
+
+> pip install --upgrade --ignore-installed tensorflow
+
+gpu:
+
+> pip install --upgrade --ignore-installed tensorflow-gpu
