@@ -35,8 +35,8 @@
 
 cpu:
 
-> pip install --upgrade --ignore-installed tensorflow
+`pip install --upgrade --ignore-installed tensorflo`
 
 gpu:
 
-> pip install --upgrade --ignore-installed tensorflow-gpu
+`pip install --upgrade --ignore-installed tensorflow-gpu`
