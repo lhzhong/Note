@@ -446,7 +446,7 @@ $ sudo ./install
 #### 1.安装依赖包
 
 ```
-$ sudo apt-get install libatlas-base-dev libprotobuf-dev libleveldb-dev libsnappy-dev  libboost-all-dev  install libhdf5-serial-dev libgflags-dev libgoogle-glog-dev liblmdb-dev protobuf-compiler
+$ sudo apt-get install libatlas-base-dev libprotobuf-dev libleveldb-dev libsnappy-dev libboost-all-dev libhdf5-serial-dev libgflags-dev libgoogle-glog-dev liblmdb-dev protobuf-compiler
 ```
 
 #### 2.下载源码
