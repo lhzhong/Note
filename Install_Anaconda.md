@@ -44,6 +44,7 @@ and a simple retry will get you on your way. xxxx````````
 
 **解决：**
 *  添加Anaconda的TUNA镜像 
+
 `$ conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/`
 * TUNA的help中镜像地址加有引号，需要去掉 # 设置搜索时显示通道地址
 ```
