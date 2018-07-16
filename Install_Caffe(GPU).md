@@ -204,7 +204,7 @@ $ sudo make install 
 
 ```
 export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
-export LD_LIBRARY_PATH=/usr/local/cuda8.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 export CUDA_HOME=/usr/local/cuda
  ```
 
@@ -235,7 +235,7 @@ export CUDA_HOME=/usr/local/cuda
 8）测试
 
 ```
-$ cd /usr/local/cuda-7.5/samples/1_Utilities/deviceQuery
+$ cd /usr/local/cuda-8.0/samples/1_Utilities/deviceQuery
 $ make
 $ sudo ./deviceQuery
 ```
@@ -385,6 +385,9 @@ $ sudo ln -s /usr/local/lib/python2.7/site-packages/cv2.so /home/zhong/anaconda2
 
 > 注：以上是opencv源码安装，其实也可以在acaconda下直接安装opencv
 ```
+替换清华源
+$ conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+$ conda config --set show_channel_urls yes
 $ conda install --channel https://conda.anaconda.org/menpo opencv3
 ```
 
