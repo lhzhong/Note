@@ -71,7 +71,7 @@ The key fingerprint is:
 
 > 先对/etc/ssh/sshd_config进行备份，可保存为.bak文件
 
-vi /etc/ssh/sshd_config 文件
+sudo vi /etc/ssh/sshd_config 文件
 
 ```
 #禁用root账户登录，非必要，但为了安全性，请配置
