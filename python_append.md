@@ -4,8 +4,8 @@
 ```
 x = [[1, 2], [3, 4]]
 y = [[2, 4], [6, 8]]
-x.append(x)  # x = [[1, 2], [3, 4], [[2, 4], [6, 8]]] 
-x.extend(x)  # x = [[1, 2], [3, 4], [2, 4], [6, 8]]
+x.append(x)            # x = [[1, 2], [3, 4], [[2, 4], [6, 8]]] 
+x.extend(x)            # x = [[1, 2], [3, 4], [2, 4], [6, 8]]
 ```
 
 2. numpy的方法append, concatenate
@@ -18,7 +18,7 @@ np.concatenate((a1,a2,...), axis=0):
 ```
 x = np.array([[1, 2], [3, 4]])
 y = np.array([[2, 4], [6, 8]])
-z = np.append(a, b)  # z = array([1, 2, 3, 4, 2, 4, 6, 8])
-z2 = np.concatenate((x, y))  # z2 = array([[1, 2], [3, 4], [2, 4], [6, 8]])
-z3 = np.concatenate((x, y), axis=1) # z3 = array([[1, 2, 2, 4], [3, 4, 6, 8]])
+z = np.append(a, b)                   # z = array([1, 2, 3, 4, 2, 4, 6, 8])
+z2 = np.concatenate((x, y))           # z2 = array([[1, 2], [3, 4], [2, 4], [6, 8]])
+z3 = np.concatenate((x, y), axis=1)   # z3 = array([[1, 2, 2, 4], [3, 4, 6, 8]])
 ```
