@@ -61,3 +61,12 @@ y = [5, 6, 7, 8]
 z = np.vstack((x, y))    # z = array([[1, 2, 3, 4], [5, 6, 7, 8]])
 ```
 它是垂直（按照行顺序）的把数组给堆叠起来。
+
+**4. np.newaxis**
+
+np.newaxis是用来增加数组的维度的  
+```
+x = np.array([1, 2])   # x.shape = (2,)
+y = x[np.newaxis, :]   # y.shape= (1, 2)
+y2 = x[:, np.newaxis]  # y2.shape= (2, 1)
+```
