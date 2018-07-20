@@ -68,6 +68,7 @@ plt.xticks([x1,x2,x3,…])
 plt.yticks([y1,y2,y3,..])
 ```
 > 坐标点可以通过np.arange np.linsapce等生成  
+
 如果要不显示坐标刻度：  
 `Plt.xticks([])`  
 如果坐标刻度要设置成名称形式：  
