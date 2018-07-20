@@ -73,3 +73,32 @@ plt.yticks([y1,y2,y3,..])
 `Plt.xticks([])`  
 如果坐标刻度要设置成名称形式：  
 `plt.yticks([-2, -1.8, -1, 1.22, 3],[r'$really\ bad$', r'$bad$', r'$normal$', r'$good$', r'$really\ good$'])`
+
+### 7.添加图例  
+需要事先在plot函数中设置label内容  
+```
+plt.plot(x, y1, label='linear line')
+plt.legend(loc='upper right')
+```
+如果没有在plot中设置lable内容，或想单独修改label内容，也可以在legend中传入其他参数，但是这需要plot返回变量  
+```
+l1, = plt.plot(x, y1, label='linear line')    #l1, 要以逗号结尾, 因为plt.plot() 返回的是一个列表.
+l2, = plt.plot(x, y2, color='red', linewidth=1.0, linestyle='--', label='square line')
+plt.legend(handles=[l1, l2], labels=['up', 'down'],  loc='best'
+```
+其中’loc’参数有多种，’best’表示自动分配最佳位置，其余的如下：
+
+| loc           |description|
+|---------------|:---------:|
+|'best'         | 0         |
+|'upper right'  | 1         |
+|'upper left'   | 2         |
+|'lower left'   | 3         |
+|'lower right'  | 4         |
+|'right'        | 5         |
+|'center left'  | 6         |
+|'center right' | 7         |
+|'lower center' | 8         |
+|'upper center' | 9         |
+|'center'       | 10        |
+
