@@ -129,10 +129,43 @@ plt.text(-3.7, 3, r'$This\ is\ the\ some\ text. \mu\ \sigma_i\ \alpha_t$',
 > 其中-3.7, 3,是选取text的位置, 空格需要用到转字符\ ,fontdict设置文本字体.
 
 ### 10.添加颜色条  
-`plt.colorbar()`  
+```
+plt.colorbar()
+plt.colorbar(shrink=.92) # 使colorbar的长度变短为原来的92%
+```
 设置 cmap 的几种方式：  
 ```
 plt.imshow(image, cmap=plt.get_cmap('gray_r'))
 plt.imshow(image, cmap='gray_r')
 ```
 > cmap参数值见[color example code: colormaps](https://matplotlib.org/examples/color/colormaps_reference.html)
+
+### 11.subplot  
+将多个图放到一个图中显示  
+```
+plt.subplot(231) # 将整个图像窗口分为2行3列, 当前位置为1
+```
+
+### 12.绘制双纵坐标
+```
+import pickle
+import matplotlib.pyplot as plt
+# 绘制双坐标
+plt.figure()
+fig1, ax1 = plt.subplots()
+plt.title('双坐标')
+ax2 = ax1.twinx()
+# 合并双坐标的图例
+ln1 = ax1.plot(x, y1, '-g', label='y1')
+ln2 = ax2.plot(x, y2, '-r', label='y2')
+lns = ln1 + ln2
+labs = [l.get_label() for l in lns]
+ax1.legend(lns, labs, loc=0)
+ax1.set_xlabel('x')
+ax1.set_ylabel('y1')
+ax1.set_ylim((0, 100))
+ax2.set_ylabel('y2')
+ax2.set_ylim((0, 100))
+ax1.grid()
+plt.show()
+```
