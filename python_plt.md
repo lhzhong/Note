@@ -86,7 +86,7 @@ l1, = plt.plot(x, y1, label='linear line')    #l1, 要以逗号结尾, 因为plt
 l2, = plt.plot(x, y2, color='red', linewidth=1.0, linestyle='--', label='square line')
 plt.legend(handles=[l1, l2], labels=['up', 'down'],  loc='best'
 ```
-其中’loc’参数有多种，’best’表示自动分配最佳位置，其余的如下：
+其中'loc'参数有多种，'best'表示自动分配最佳位置，其余的如下：
 
 | loc           |description|
 |---------------|:---------:|
@@ -102,3 +102,31 @@ plt.legend(handles=[l1, l2], labels=['up', 'down'],  loc='best'
 |'upper center' | 9         |
 |'center'       | 10        |
 
+### 8.获取当前坐标轴信息
+
+`plt.gca()` 获取当前坐标轴信息`.spines['right']`设置边框（'right''left''top''bottom'）`.set_color('none')`设置边框颜色  
+```
+# 比如设置边框
+ax = plt.gca()
+ax.spines['right'].set_color('none')
+# 或者
+ax.spines['right'].set_visible(False)
+```
+
+### 9.添加注释annotate和text
+```
+plt.annotate(r'$2x+1=%s$' % y0, xy=(x0, y0), xycoords='data', xytext=(+30, -30),
+             textcoords='offset points', fontsize=16,
+             arrowprops=dict(arrowstyle='->', connectionstyle="arc3,rad=.2"))
+
+```
+> 参数xycoords='data' 是说基于数据的值来选位置, xytext=(+30, -30) 和 textcoords='offset points' 对于标注位置的描述 和 xy 偏差值, arrowprops是对图中箭头类型的一些设置.
+```
+plt.text(-3.7, 3, r'$This\ is\ the\ some\ text. \mu\ \sigma_i\ \alpha_t$',
+         fontdict={'size': 16, 'color': 'r'})
+
+```
+> 其中-3.7, 3,是选取text的位置, 空格需要用到转字符\ ,fontdict设置文本字体.
+
+### 10.添加颜色条  
+`plt.colorbar()`
