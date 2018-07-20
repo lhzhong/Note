@@ -129,4 +129,10 @@ plt.text(-3.7, 3, r'$This\ is\ the\ some\ text. \mu\ \sigma_i\ \alpha_t$',
 > 其中-3.7, 3,是选取text的位置, 空格需要用到转字符\ ,fontdict设置文本字体.
 
 ### 10.添加颜色条  
-`plt.colorbar()`
+`plt.colorbar()`  
+设置 cmap 的几种方式：  
+```
+plt.imshow(image, cmap=plt.get_cmap('gray_r'))
+plt.imshow(image, cmap='gray_r')
+```
+> cmap参数值见[color example code: colormaps](https://matplotlib.org/examples/color/colormaps_reference.html)
