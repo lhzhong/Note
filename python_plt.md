@@ -152,6 +152,7 @@ import pickle
 import matplotlib.pyplot as plt
 # 绘制双坐标
 plt.figure()
+# plt.subplots() 返回一个 Figure实例fig 和一个 AxesSubplot实例ax, ax代表坐标轴和画的图。
 fig1, ax1 = plt.subplots()
 plt.title('双坐标')
 ax2 = ax1.twinx()
