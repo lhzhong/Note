@@ -22,24 +22,24 @@
 NVIDIA官网下载网址： http://www.nvidia.cn/Download/index.aspx?lang=cn
 
 #### 2.进入字符界面，按Ctrl+Alt+F1，删除旧的驱动
-`$ sudo apt-get purge nvidia*`
+`$ sudo apt-get purge nvidia*`
 
 #### 3.禁用自带的nouveau nvidia驱动 （很重要！）
 
 1）创建文件
 
-`$ sudo vim /etc/modprobe.d/blacklist-nouveau.conf`
+`$ sudo vim /etc/modprobe.d/blacklist-nouveau.conf`
 
 2）在文件中添加
 
 ```
-blacklist nouveau 
-options nouveau modeset=0
+blacklist nouveau 
+options nouveau modeset=0
 ```
 
 3）更新
 
-`$ sudo update-initramfs -u`
+`$ sudo update-initramfs -u`
 
 #### 4.安装自己驱动
 
@@ -53,7 +53,7 @@ Ctrl+Alt+F1
 
 3）关闭X-Window
 
-`$ sudo service lightdm stop`
+`$ sudo service lightdm stop`
 
 4）切换到驱动所在目录
 
@@ -66,7 +66,7 @@ $ sudo ./NVIDIA-Linux-x86_64-381.22.run
 ```
 6）安装完成后执行
 
-$ sudo service lightdm start
+`$ sudo service lightdm start`
 
 #### 5.测试检验是否安装成功
 
@@ -104,8 +104,8 @@ $ sudo service lightdm start
 2）更新列表
 
 ```
-$ sudo apt-get update
-$ sudo apt-get upgrade
+$ sudo apt-get update
+$ sudo apt-get upgrade
 ```
 
 ## 四、安装Anaconda2（我的版本2.7）
@@ -144,7 +144,7 @@ Ubuntu16.04需要的gcc版本为5.3.1，而当Ubuntu16.04安装好之后，系�
 
 1）查看gcc版本
 
-`$ gcc -v`
+`$ gcc -v`
 
 如果版本是5.3.1以下的就不用降级了，否则要降级gcc
 
@@ -155,29 +155,29 @@ http://pan.baidu.com/s/1hrBhF84 密码：98ix
 3）解压，进入gcc目录，下载依赖项
 
 ```
-$ sudo tar -zxvf gcc-5.3.0.tar.gz 
-$ cd gcc-5.3.0/  
-$ sudo ./contrib/download_prerequisites 
+$ sudo tar -zxvf gcc-5.3.0.tar.gz
+$ cd gcc-5.3.0/
+$ sudo ./contrib/download_prerequisites 
 ```
 
 4）新建文件夹，生成makefile文件
 
 ```
-$ sudo mkdir build
-$ cd build/
-$ sudo ../configure --enable-checking=release --enable-languages=c,c++ --disable-multilib
+$ sudo mkdir build
+$ cd build/ 
+$ sudo ../configure --enable-checking=release --enable-languages=c,c++ --disable-multilib
 ```
 
 5）编译安装
 
 ```
-$ sudo make -j8  
-$ sudo make install 
+$ sudo make -j8
+$ sudo make install 
 ```
 
 6）查看是否安装成功
 
-`$ gcc --version`
+`$ gcc --versio`
 
 #### 2.安装cuda
 
@@ -185,7 +185,7 @@ $ sudo make install 
 
 2）运行cuda安装
 
-`$ sudo ./cuda_8.0.44_linux.run`
+`$ sudo ./cuda_8.0.44_linux.run`
 
 3）进入声明和安装指导界面
 * 声明界面可以连续按Ctr+f向下阅读直到结尾，也可以按Ctr+C跳过阅读。
@@ -194,27 +194,27 @@ $ sudo make install 
 
 4）安装一些依赖库
 
-`$ sudo apt-get install freeglut3-dev build-essential libx11-dev libxmu-dev libxi-dev libgl1-mesa-glx libglu1-mesa libglu1-mesa-dev`
+`$ sudo apt-get install freeglut3-dev build-essential libx11-dev libxmu-dev libxi-dev libgl1-mesa-glx libglu1-mesa libglu1-mesa-dev`
 
 5）打开.bashrc文件进行配置
 
-`$ sudo gedit ~/.bashrc`
+`$ sudo gedit?~/.bashrc`
 
 添加内容：
 
 ```
-export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
-export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
-export CUDA_HOME=/usr/local/cuda
+export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda8.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+export CUDA_HOME=/usr/local/cuda
  ```
 
 6）设置环境变量
 
-`$ sudo gedit /etc/profile`
+`$ sudo gedit /etc/profile`
 
 添加内容：
 
-`export PATH=/usr/local/cuda/bin:$PATH `
+`export PATH=/usr/local/cuda/bin:$PATH`
 
 使环境变量立即生效：
 
@@ -222,15 +222,15 @@ export CUDA_HOME=/usr/local/cuda
 
 7）创建链接文件
 
-`$ sudo gedit /etc/ld.so.conf.d/cuda.conf`
+`$ sudo gedit /etc/ld.so.conf.d/cuda.conf`
 
 添加内容：
 
-`/usr/local/cuda/lib64 `
+`/usr/local/cuda/lib64`
 
 使链接立即生效：
 
-`$ sudo ldconfig `
+`$ sudo ldconfig`
 
 8）测试
 
@@ -257,14 +257,14 @@ cuDNN是GPU加速计算深层神经网络的库
 
 ```
 $ cd cuda/include
-$ sudo cp cudnn.h /usr/local/cuda/include  #复制头文件
+$ sudo cp cudnn.h /usr/local/cuda/include  #复制头文件
 ```
 
 4.将进入lib64目录下的动态文件进行复制和链接：
 
 ```
 $ cd ../lib64
-$ sudo cp lib* /usr/local/cuda/lib64/
+$ sudo cp lib* /usr/local/cuda/lib64/\
 $ cd /usr/local/cuda/lib64/
 $ sudo chmod +r libcudnn.so.6.0.5
 $ sudo ln -sf libcudnn.so.6.0.6 libcudnn.so.6
@@ -368,7 +368,7 @@ http://blog.csdn.net/qq_14839543/article/details/73293370
 
 添加内容：
 
-`export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH`
+`export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH`
 
 #### 8.测试
 
@@ -411,11 +411,11 @@ http://pan.baidu.com/s/1o7LK9gY 密码：eim8
 
 #### 4.新建挂载文件夹
 
-`$ mkdir matlab`
+`$ mkdir matlab`
 
 #### 5.切换到镜像所在文件夹，将MATHWORKS_R2014A.iso挂在到matlab/上
 
-`$ sudo mount -o loop MATHWORKS_R2014A.iso ./matlab/`
+`$ sudo mount -o loop MATHWORKS_R2014A.iso ./matlab/`
 
 #### 6.切换到matlab目录，进行安装
 
