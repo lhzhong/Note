@@ -134,6 +134,25 @@ $ sudo apt-get upgrade
 
 #### 4.在终端输入python命令，如果没报错，出现Anaconda2版本，说明anaconda2安装完毕。
 
+> 注：如果报错
+```
+Fetching package metadata ... CondaHTTPError: HTTP None None for url Elapsed: None An HTTP error occurred when trying to retrieve this URL. HTTP errors are often intermittent, and a simple retry will get you on your way. xxxx
+```
+原因：因为conda config这个用的是默认的镜像元设置链接不上，因此我们要用别的镜像元
+
+解决：
+```
+# 添加Anaconda的TUNA镜像 
+$ conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+# TUNA的help中镜像地址加有引号，需要去掉 # 设置搜索时显示通道地址
+$ conda config --set show_channel_urls yes
+$ conda config --show-source
+# 如果还是不行
+#把-default 默认设置删掉
+$ sudo vim ~/.condarc
+# 进去把default那一行删掉就可以了
+```
+
 ## 五、安装CUDA（我的版本8.0）
 
 一定要搞清楚你自己的显卡要装什么版本的驱动，以及支持的cuda版本，
