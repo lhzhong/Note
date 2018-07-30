@@ -217,7 +217,7 @@ $ sudo make install 
 
 5）打开.bashrc文件进行配置
 
-`$ sudo gedit?~/.bashrc`
+`$ sudo gedit ~/.bashrc`
 
 添加内容：
 
@@ -404,10 +404,8 @@ $ sudo ln -s /usr/local/lib/python2.7/site-packages/cv2.so /home/zhong/anaconda2
 
 > 注：以上是opencv源码安装，其实也可以在acaconda下直接安装opencv
 ```
-替换清华源
-$ conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
-$ conda config --set show_channel_urls yes
 $ conda install --channel https://conda.anaconda.org/menpo opencv3
+因为用的anaconda源，安装较慢，也有可能一次安装不成功
 ```
 
 ## 八、安装MATLAB（我的版本MATLAB2014A）
