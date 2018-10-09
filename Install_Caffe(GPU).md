@@ -108,13 +108,13 @@ $ sudo apt-get update
 $ sudo apt-get upgrade
 ```
 
-## 四、安装Anaconda2（我的版本2.7）
+## 四、安装Anaconda3
 
-#### 1.下载Anaconda（我下的2.7版本的）
+#### 1.下载Anaconda
 
-#### 2.cd {Anaconda2所在目录}并执行 
+#### 2.cd {Anaconda3所在目录}并执行 
 
-`$ bash Anaconda2-2.4.1-Linux-x86_64.sh`
+`$ bash Anaconda3-5.2.0-Linux-x86_64.sh`
 
 * 在安装的过程中，会问你安装路径，直接回车默认就可以了。
 * 有个地方问你是否将anaconda安装路径加入到环境变量（.bashrc)中，这个一定要输入yes。
@@ -126,13 +126,13 @@ $ sudo apt-get upgrade
 
 添加内容：
 
-`export PATH=/home/zhong/anaconda2/bin:$PATH`
+`export PATH=/home/zhong/anaconda3/bin:$PATH`
 
 使环境变量立即生效：
 
 `$ source /etc/profile`
 
-#### 4.在终端输入python命令，如果没报错，出现Anaconda2版本，说明anaconda2安装完毕。
+#### 4.在终端输入python命令，如果没报错，出现Anaconda3版本，说明anaconda3安装完毕。
 
 > 注：如果报错
 ```
@@ -196,7 +196,7 @@ $ sudo make install 
 
 6）查看是否安装成功
 
-`$ gcc --versio`
+`$ gcc --version`
 
 #### 2.安装cuda
 
@@ -262,7 +262,7 @@ $ sudo ./deviceQuery
 如果显示一些关于GPU的信息，则说明安装成功。
 > 注：查看版本：`$ nvcc –V`
 
-## 六、安装cuDNN（我的版本8.0）
+## 六、安装cuDNN（我的版本6.0）
 
 cuDNN是GPU加速计算深层神经网络的库
 
@@ -272,7 +272,7 @@ cuDNN是GPU加速计算深层神经网络的库
 
 `$ tar -zxvf ./cudnn-8.0-linux-x64-v5.0.tgz`
 
-#### 3.进入cuDNN5.0解压之后的include目录，执行：
+#### 3.进入cuDNN6.0解压之后的include目录，执行：
 
 ```
 $ cd cuda/include
@@ -283,9 +283,9 @@ $ sudo cp cudnn.h /usr/local/cuda/include  #复制头文件
 
 ```
 $ cd ../lib64
-$ sudo cp lib* /usr/local/cuda/lib64/\
+$ sudo cp lib* /usr/local/cuda/lib64/
 $ cd /usr/local/cuda/lib64/
-$ sudo chmod +r libcudnn.so.6.0.5
+$ sudo chmod +r libcudnn.so.6.0.21
 $ sudo ln -sf libcudnn.so.6.0.6 libcudnn.so.6
 $ sudo ln -sf libcudnn.so.6 libcudnn.so
 $ sudo ldconfig
