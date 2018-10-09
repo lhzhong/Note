@@ -4,7 +4,7 @@
     | ----------------- |-----------------| 
     | GPU               | GTX1080         |
     | Linux             | 16.04(LTS)64    | 
-    | python            | Anaconda2       | 
+    | python            | Anaconda3       | 
     | cuda              | 8.0             |
     | cudnn             | 8.0             |
     | drive             | x86_64-381.22   | 
