@@ -8,7 +8,7 @@ ssh分客户端和服务器端，ssh-client服务ubuntu下默认安装，ssh-ser
 
 **2.安装ssh-server服务**
 
-> sudo apt-get install openssh-service
+> sudo apt-get install openssh-server
 
 再次查看安装的服务
 
