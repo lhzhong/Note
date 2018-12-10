@@ -101,11 +101,13 @@ PasswordAuthentication no
 
 * 下载数据
 
-> scp  -i  ~/.ssh/id_rsa  -r username@remote_ip:/data/www/develop/develop_activity_task  /data/www/activity_task_bak
+> scp  [-i  ~/.ssh/id_rsa]  -r username@remote_ip:/data/www/develop/develop_activity_task  /data/www/activity_task_bak
 
 * 上传数据
 
-> scp -i ~/.ssh/id_rsa  -r /data/www/poker/pokerServer root@remote_ip:/data/www/
+> scp [-i ~/.ssh/id_rsa]  -r /data/www/poker/pokerServer root@remote_ip:/data/www/  
+
+>> -i密钥才使用
 
 **6.windows下连接**
 
