@@ -37,31 +37,31 @@
 作者认为通过weight值的大小很难判定filter的重要性，通过这个来裁剪的话有可能裁掉一些有用的filter。因此提出了一种基于熵值的裁剪方式，利用熵值来判定filter的重要性。
 
 作者将每一层的输出通过一个Global average Pooling将feature map转换为一个长度为c（filter数量）的向量，对于n张图像可以得到一个n*c的矩阵，对于每一个filter，将它分为m个bin，统计每个bin的概率，然后计算它的熵值，利用熵值来判定filter的重要性，再对不重要的filter进行裁剪。
-```math
+$$
 H_{j}=-\sum_{i=1}^{m} p_{i} \log p_{i}
-```
+$$
 裁剪是在把一轮迭代数据都输入后统计其熵后进行的。每裁剪完一层，通过少数几个迭代来恢复部分的性能，当所有层都裁剪完之后，再通过较多的迭代来恢复整体的性能
 
 #### Taylor expansion（NIPS2016）
 近似的求算对loss的影响力度。作者将裁剪问题当做一个组合优化问题：从众多的权重参数中选择一个最优的组合B，使得被裁剪的模型的代价函数的损失最小。
-```math
+$$
 \min _{\mathcal{W}^{\prime}}\left|\mathcal{C}\left(\mathcal{D} | \mathcal{W}^{\prime}\right)-\mathcal{C}(\mathcal{D} | \mathcal{W})\right|
-```
+$$
 通过将损失函数C在hi=0出进行Taylor展开
-```math
+$$
 \mathcal{C}\left(\mathcal{D}, h_{i}\right)=\mathcal{C}\left(\mathcal{D}, h_{i}=0\right)+\frac{\delta \mathcal{C}}{\delta h_{i}} h_{i}+R_{1}\left(h_{i}=0\right)
-```
+$$
 
 因此就可以将损失函数的衰减转化成损失函数对feature map的梯度和feature map激活乘积的绝对值，这样就能够用来评价参数的重要性
-```math
+$$
 \left|\Delta \mathcal{C}\left(h_{i}\right)\right|=\left|\mathcal{C}\left(\mathcal{D}, h_{i}\right)-\frac{\delta \mathcal{C}}{\delta h_{i}} h_{i}-\mathcal{C}\left(\mathcal{D}, h_{i}\right)\right|=\left|\frac{\delta \mathcal{C}}{\delta h_{i}} h_{i}\right|
-```
+$$
 
 #### LDA-Pruned（CVPR2017）
 经过LDA分析发现对于每一个类别，有很多filter之间的激活是高度不相关的，因此可以利用这点来剔除大量的只具有少量信息的filter。VGG-16的conv5_3具有512个filter，将每一个filter的输出值中的最大值定义为该filter的fire score，因此对应于每一张图片就具有一个512维的fire向量，当输入一堆图片时，就可以得到一个N*512的fire矩阵，作者用intra-class correlation来衡量filter的重要性
-```math
+$$
 I C C=\frac{s^{2}(b)}{s^{2}(b)+s^{2}(w)}
-```
+$$
 就是LDA公式，所以接下来就是通过LDA降维来删除对分类提取特征判别不强的filter
 
 #### Random Masks（ICLR2017）
