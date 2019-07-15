@@ -36,7 +36,8 @@
 #### Entropy-based Pruning（2017）
 作者认为通过weight值的大小很难判定filter的重要性，通过这个来裁剪的话有可能裁掉一些有用的filter。因此提出了一种基于熵值的裁剪方式，利用熵值来判定filter的重要性。
 
-作者将每一层的输出通过一个Global average Pooling将feature map转换为一个长度为c（filter数量）的向量，对于n张图像可以得到一个n*c的矩阵，对于每一个filter，将它分为m个bin，统计每个bin的概率，然后计算它的熵值，利用熵值来判定filter的重要性，再对不重要的filter进行裁剪。
+作者将每一层的输出通过一个Global average Pooling将feature map转换为一个长度为c（filter数量）的向量，对于n张图像可以得到一个n* c的矩阵，对于每一个filter，将它分为m个bin，统计每个bin的概率，然后计算它的熵值，利用熵值来判定filter的重要性，再对不重要的filter进行裁剪。
+
 $$
 H_{j}=-\sum_{i=1}^{m} p_{i} \log p_{i}
 $$
@@ -45,7 +46,7 @@ $$
 #### Taylor expansion（NIPS2016）
 近似的求算对loss的影响力度。作者将裁剪问题当做一个组合优化问题：从众多的权重参数中选择一个最优的组合B，使得被裁剪的模型的代价函数的损失最小。
 $$
-\min _{\mathcal{W}^{\prime}}\left|\mathcal{C}\left(\mathcal{D} | \mathcal{W}^{\prime}\right)-\mathcal{C}(\mathcal{D} | \mathcal{W})\right|
+\min_{\mathcal{W}^{\prime}}\left|\mathcal{C}\left(\mathcal{D} | \mathcal{W}^{\prime}\right)-\mathcal{C}(\mathcal{D} | \mathcal{W})\right|
 $$
 通过将损失函数C在hi=0出进行Taylor展开
 $$
